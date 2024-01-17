@@ -1,0 +1,16 @@
+name: Terraform Stage Apply
+
+# configure manual trigger
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build project
+        run: |
+          npm install
+          npm run build
